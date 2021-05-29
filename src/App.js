@@ -1,9 +1,19 @@
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Toggle from "./Components/Toggle/Toggle";
 
 function App() {
+
+  const[toggle, setToggle] = useState(false);
+  const handelClick = () => {
+    setToggle((s) => !s)
+  }
+
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <header>
+        <Toggle toggled={toggle} onClick={handelClick}/>
+      </header>
     </div>
   );
 }
